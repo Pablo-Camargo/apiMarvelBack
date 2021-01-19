@@ -22,7 +22,7 @@ class CharacterController {
         try {
             const { name } = req.params;
             const data = await apiMarvel.get(
-                `/characters?ts=${timeStamp}&apikey=${apiKey}&hash=${md5}&name=${name}`
+                `/characters?ts=${timeStamp}&apikey=${apiKey}&hash=${md5}&nameStartsWith=${name}`
             );
             console.log(data);
             return res.json(data.data);
