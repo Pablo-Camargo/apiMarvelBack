@@ -24,7 +24,7 @@ class CharacterController {
             const data = await apiMarvel.get(
                 `/characters?ts=${timeStamp}&apikey=${apiKey}&hash=${md5}&nameStartsWith=${name}`
             );
-            console.log(data);
+
             return res.json(data.data);
         } catch (error) {
             return res.status(error.status || 400).json(error);
